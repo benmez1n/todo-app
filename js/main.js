@@ -130,7 +130,7 @@ completedBtn.onclick = ()=>{
         if(tasksContainerCount[i].childNodes[0].classList.contains("ischecked")){
             tasksContainerCount[i].style.display = "block";
         }
-        else errorExist.style.display = "none";
+        else tasksContainerCount[i].style.display = "none";
     }
 }
 clearBtn.onclick = ()=>{
