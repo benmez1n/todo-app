@@ -1,0 +1,143 @@
+:root{
+    --filter-selected:hsl(220, 98%, 61%);
+    --Check-Background:to bottom,hsl(192, 100%, 67%),hsl(280, 87%, 65%);   
+}
+*{box-sizing: border-box;margin:0;padding:0;}
+ /*light Theme colors*/
+[data-theme="light"]{
+    --bg-color:hsl(0, 0%, 98%);
+    --bg-image:url('../images/bg-desktop-light.jpg');
+    --todo-container-bg-color:hsl(236, 33%, 92%);
+    --header-color:hsl(233, 11%, 84%);
+    --border-color:hsl(236, 9%, 61%);
+    --tasks-finished:hsl(236, 9%, 61%);
+    --filter-hover:hsl(235, 19%, 35%);
+    --txt-color:hsl(235, 24%, 19%);
+}
+/*Dark Theme color*/
+[data-theme="dark"]{
+    --bg-color:hsl(235, 21%, 11%);
+    --bg-image:url('../images/bg-desktop-dark.jpg');
+    --todo-container-bg-color:hsl(235, 24%, 19%);
+    --header-color:white;
+    --txt-color:hsl(234, 39%, 85%);
+    --filter-hover:hsl(236, 33%, 92%);
+    --filter-txt:hsl(234, 11%, 52%);
+    --border-color:hsl(234, 11%, 52%);;
+    --tasks-finished:hsl(233, 14%, 35%);
+}
+body{background:var(--bg-color) var(--bg-image) top no-repeat;font-family:"Josefin Sans";}
+.container{width:1170px;margin:0 auto;}
+#head{
+    display: flex;
+    justify-content: space-between;
+    margin:100px auto 50px;
+    color:var(--header-color);
+}
+#head,#filter,#to-do-input,#to-do-tasks{width:600px}
+h1{margin-top:0;letter-spacing: 15px;text-transform: uppercase;color:white}
+#theme-switcher{position: relative;}
+#theme-switcher img{position: absolute;left:-25px;display:none;}
+#theme-switcher img:hover{transform:rotate(19deg)}
+#theme-switcher img.active{display:block;}
+#to-do-input{margin:20px auto 30px;}
+input{
+    border-radius: 5px;
+    width:100%;
+    height: 60px;
+    border:none;
+    outline:none;
+    font-size:18px;
+    font-family: "Josefin Sans";
+    padding-left:30px;
+    background-color: var(--todo-container-bg-color);
+    color:var(--txt-color);
+}
+input::placeholder{color:var(--border-color);font-weight: normal;}
+#to-do-tasks{
+    margin:0 auto;
+    background-color: var(--todo-container-bg-color);
+    color:var(--txt-color);
+    border-radius:  5px 5px 0 0;
+}
+#filter{
+    background-color: var(--todo-container-bg-color);
+    margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    border-radius: 0 0 5px 5px;
+}
+#filter,#to-do-tasks{padding:18px;}
+#filter .button{margin-right:8px;color: var(--filter-txt);}
+#items-left{color: var(--tasks-finished);}
+#filtration span.selected{color:var(--filter-selected)}
+#filter .button:hover{color:var(--filter-hover)}
+#to-do-tasks >span:first-of-type{padding-top:0}
+#to-do-tasks >span{
+    display: block;
+    width:100%;
+    margin:0 auto;
+    padding:15px;
+    border-bottom:1px var(--border-color) solid;
+}
+#filter .button,
+.check-box,
+.delete,
+.tasks-text,
+#theme-switcher img{cursor:pointer}
+footer{text-align: center;margin-bottom:50px;color:var(--txt-color)}
+footer ul{list-style: none;padding-inline-start: 0;margin-top:80px}
+footer li{display: inline-block;}
+footer a{font-size: 32px;margin-right:20px;color:var(--txt-color)}
+footer a:hover i{color:var(--filter-selected);transform:rotate(45deg);transition: all ease-in 1s ;}
+.delete{
+    float: right;
+    height:20px;
+    width:50px;
+    transform:translateX(13px) ;
+    background: url(../images/icon-cross.svg) center no-repeat;
+}
+.check-box{
+    border-radius: 50%;
+    width:15px;
+    height: 15px;
+    border:hsl(280, 87%, 65%) 1px solid ;
+    display: inline-block;
+    margin-right:15px;
+}
+.check-box.ischecked{
+    background-image:linear-gradient(var(--Check-Background));
+    position: relative;
+}
+.check-box.ischecked::after{
+    content: '';
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height: 100%;
+    background: url(../images/icon-check.svg) no-repeat center;
+}
+.selected{color:var(--filter-selected)}
+.task-finished{text-decoration: line-through;color:var(--tasks-finished);}
+.empty{border: red 2px solid;border-radius: 10px;}
+.exist-error{
+    width:600px;
+    height: 50px;
+    border-radius: 10px;
+    margin:0 auto 20px;
+    padding:15px;
+    display: none;
+    background-color:red ;
+    color:white;
+    font-size: 20px;
+}
+@media (max-width:769px){
+    .container{width:96%;margin:0 auto;}
+    #head,#filter,
+    #to-do-input,#to-do-tasks{width:100%;}
+    #filter{font-size:11px}
+    #filter,
+    #to-do-tasks{padding:18px;}
+}
+@font-face {font-family: "Josefin Sans";src: url(../fonts/JosefinSans-VariableFont_wght.ttf);}

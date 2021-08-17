@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel=stylesheet href="css/style.css"/>
+  <link rel="stylesheet" href=""/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+  <div class=container>
+    <div id=head>
+      <h1>Todo</h1>
+      <div id=theme-switcher>
+        <img class=active src="images/icon-sun.svg" alt=""/>
+        <img src="images/icon-moon.svg" alt="" />
+      </div>
+    </div>
+    <div id=to-do-input>
+      <input type=text placeholder="Create a new to do"/><!--<i class="fa fa-plus-circle"></i>-->
+    </div>
+    <div id=error class=exist-error></div>
+    <div id="to-do-tasks"></div>
+    <div id=filter>
+      <div id="items-left">
+        <span id=items-left-num>0</span> items left
+      </div>
+      <div id=filtration>
+        <span class="button selected" id=all-tasks>All</span>
+        <span class="button" id=tasks-active>Active</span> 
+        <span class="button" id=tasks-completed>Completed</span>
+      </div>
+      <span class="button" id=clear-completed>Clear Completed</span>
+    </div>
+    <footer>
+      <ul>
+        <li><a href="https://www.facebook.com/benmez1n" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/benmeziane.gh/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://github.com/benmez1n" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+      <span style="display:block;margin-top:20px;">GHOMRI BENMEZIANE</span>
+    </footer>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
